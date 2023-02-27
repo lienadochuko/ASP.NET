@@ -16,3 +16,14 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+footer{
+    height:50px;
+}
+
+.footer{
+    height: 50px;
+}
+.footer .container {
+    height: 50px;
+}

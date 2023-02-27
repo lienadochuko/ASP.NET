@@ -12,13 +12,13 @@ namespace study.Models
 		public int DisplayOrder { get; set; }
 		public DateTime CreatedDateTime { get; set; } = DateTime.Now;
 
-		public static void Main1()
-		{
-			Tabledata tabledatalist = new Tabledata();
-			tabledatalist.Name = "Name";
-			tabledatalist.Department = "ccd";
-			tabledatalist.Id = 1;
+		//public static void Main1()
+		//{
+		//	Tabledata tabledatalist = new Tabledata();
+		//	tabledatalist.Name = "Name";
+		//	tabledatalist.Department = "ccd";
+		//	tabledatalist.Id = 1;
 
-		}
+		//}
 	}
 }
