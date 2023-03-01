@@ -12,7 +12,7 @@ using study.Data;
 namespace study.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230226151923_addTabledataToDatabase")]
+    [Migration("20230227183721_addTabledataToDatabase")]
     partial class addTabledataToDatabase
     {
         /// <inheritdoc />

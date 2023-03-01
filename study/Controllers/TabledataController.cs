@@ -14,7 +14,7 @@ namespace study.Controllers
         }
 
         public IActionResult Index()
-        {
+        { 
             IEnumerable<Tabledata> objectTabledataList = _db.Tabledatas;
             return View(objectTabledataList);
         }
