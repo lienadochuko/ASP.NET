@@ -1,0 +1,47 @@
+﻿@model Tabledata
+@{
+    ViewData["Title"] = "Create";
+}
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/Bootswatchstyle.css" asp-append-version="true" />
+   </head>
+
+
+<form method="post" class="container">
+    <div class="border p-3 mt-4" style="width:80%; border-radius:10px;">
+        <div class="row pb-2">
+            <h2 class="text-primary text-start">Create Category</h2>
+        </div>
+        <div class="mb-3 p-3 text-start">
+            <div class="dan2 mb-2">
+                <label asp-for="Name" style="width:10%;"></label>
+                <input asp-for="Name" class="form-control" style="width:90%;" />
+            </div> 
+            <span asp-validation-for="Name" class="text-danger"></span>
+            <div class="dan2 mb-2">
+                <label asp-for="Department" style="width:fit-content; margin-right:2px;"></label>
+                <input asp-for="Department" class="form-control" style="width:90%;" />
+            </div>
+            <span asp-validation-for="Department" class="text-danger"></span>
+            <div class="dan2 mb-2">
+                <label asp-for="DisplayOrder" style="width:fit-content; margin-right:2px;"></label>
+                <input asp-for="DisplayOrder" class="form-control" style="width:90%;" />
+            </div>
+            <span asp-validation-for="DisplayOrder" class="text-danger">Input is invalid</span>
+           @* <div class="dan2 mb-2">
+                <label asp-for="CreatedDateTime" style="width:fit-content; margin-right:2px;"></label>
+                <input asp-for="CreatedDateTime" type="datetime-local" name="date-time" style="width:90%;" value="<%= DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss")%>
+            </div>*@
+            <div class="dan2 mt-4 justify-content-between">
+                <a asp-controller="Tabledata" asp-action="Index" class="btn btn-secondary" style="width:30%;">Back to Tabledata</a>
+                <button type="submit" class="btn btn-primary" style="width:30%;">Create</button>
+
+            </div>
+           
+            
+            @*<label asp-for=""></label>*@
+        </div>
+    </div>
+</form>
+

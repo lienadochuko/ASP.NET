@@ -2258,7 +2258,7 @@ progress {
     }
 }
 
-.table {
+/*.table {
     --bs-table-color: var(--bs-body-color);
     --bs-table-bg: transparent;
     --bs-table-border-color: rgba(0, 0, 0, 0.05);
@@ -2450,8 +2450,8 @@ progress {
     color: var(--bs-table-color);
     border-color: var(--bs-table-border-color);
 }
-
-.table-responsive {
+*/
+/*.table-responsive {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
 }
@@ -2489,7 +2489,7 @@ progress {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
     }
-}
+}*/
 
 .form-label {
     margin-bottom: 0.5rem;

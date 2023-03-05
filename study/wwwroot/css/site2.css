@@ -15,7 +15,7 @@
     left: 0px;
     position: absolute;
     top: 0px;
-    width: 20%;
+    width: 21%;
     z-index: 8;
     overflow: hidden;
     -webkit-transition: all 0s ease;
@@ -126,6 +126,16 @@
     align-content: center;
     align-items: center;
     text-align: center;
+}
+.dan2 {
+    width:100%;
+    display: flex;
+    margin-bottom: 2px;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    text-align:left;
+   
 }
 
 .collapsed + .main-content {
