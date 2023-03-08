@@ -9,6 +9,8 @@ namespace study.Models
 		[Required]
 		public string Name {get; set;}
 		public string Department {get; set;}
+
+		[Range(0, int.MaxValue)]
 		public int DisplayOrder { get; set; }
 		public DateTime CreatedDateTime { get; set; } = DateTime.Now;
 
