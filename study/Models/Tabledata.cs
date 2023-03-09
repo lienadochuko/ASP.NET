@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace study.Models
 {
@@ -10,6 +11,7 @@ namespace study.Models
 		public string Name {get; set;}
 		public string Department {get; set;}
 
+		[DisplayName("order")]
 		[Range(0, int.MaxValue)]
 		public int DisplayOrder { get; set; }
 		public DateTime CreatedDateTime { get; set; } = DateTime.Now;

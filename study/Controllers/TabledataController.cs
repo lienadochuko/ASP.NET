@@ -32,6 +32,14 @@ namespace study.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(Tabledata obj)
         {
+            if(obj.Name == obj.Department || obj.Name == obj.DisplayOrder.ToString() || obj.Department == obj.Department ) 
+            {
+                ModelState.AddModelError("CustomError", "pls make sure the name, department and order do not match");
+            }
+            if(obj.Name == obj.Department && obj.Name == obj.DisplayOrder.ToString() && obj.Department == obj.Department ) 
+            {
+                ModelState.AddModelError("CustomError", "pls make sure the name, department and order do not match");
+            }
            if (ModelState.IsValid)
             {
                 _db.Tabledatas.Add(obj);
