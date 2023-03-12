@@ -32,11 +32,11 @@ namespace study.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(Tabledata obj)
         {
-            if(obj.Name == obj.Department || obj.Name == obj.DisplayOrder.ToString() || obj.Department == obj.Department ) 
+            if(obj.Name == obj.Department || obj.Name == obj.DisplayOrder.ToString() || obj.DisplayOrder.ToString() == obj.Department ) 
             {
                 ModelState.AddModelError("CustomError", "pls make sure the name, department and order do not match");
             }
-            if(obj.Name == obj.Department && obj.Name == obj.DisplayOrder.ToString() && obj.Department == obj.Department ) 
+            if(obj.Name == obj.Department && obj.Name == obj.DisplayOrder.ToString() && obj.DisplayOrder.ToString() == obj.Department ) 
             {
                 ModelState.AddModelError("CustomError", "pls make sure the name, department and order do not match");
             }
@@ -48,6 +48,82 @@ namespace study.Controllers
             }
 
             return View(obj);
+        }
+
+        public IActionResult Edit(int? id)
+        {
+
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            var modelFromDb = _db.Tabledatas.Find(id);
+            //use either of the lines below if its is not a primary key
+            //var model = _db.Tabledatas.FirstOrDefault(x => x.Id == id);
+            //var model = _db.Tabledatas.SingleOrDefault(x => x.Id == id);
+
+            if (modelFromDb == null)
+            {
+                return NotFound();
+            }
+
+            return View(modelFromDb);
+        }
+
+        //POST
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(Tabledata obj)
+        {
+            if (obj.Name == obj.Department || obj.Name == obj.DisplayOrder.ToString() || obj.DisplayOrder.ToString() == obj.Department)
+            {
+                ModelState.AddModelError("CustomError", "pls make sure the name, department and order do not match");
+            }
+            if (obj.Name == obj.Department && obj.Name == obj.DisplayOrder.ToString() && obj.DisplayOrder.ToString() == obj.Department)
+            {
+                ModelState.AddModelError("CustomError", "pls make sure the name, department and order do not match");
+            }
+            if (ModelState.IsValid)
+            {
+                _db.Tabledatas.Update(obj);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(obj);
+        }
+
+
+        public IActionResult Delete(int? id)
+        {
+
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            var modelFromDb = _db.Tabledatas.Find(id);
+            //use either of the lines below if its is not a primary key
+            //var model = _db.Tabledatas.FirstOrDefault(x => x.Id == id);
+            //var model = _db.Tabledatas.SingleOrDefault(x => x.Id == id);
+
+            if (modelFromDb == null)
+            {
+                return NotFound();
+            }
+
+            return View(modelFromDb);
+        }
+
+        //POST
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Delete(Tabledata obj)
+        {
+          
+                _db.Tabledatas.Remove(obj);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+         
         }
     }
 }
