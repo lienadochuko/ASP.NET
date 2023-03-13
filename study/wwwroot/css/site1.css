@@ -14,11 +14,11 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    height: fit-content;
 }
 
 @charset "UTF-8";
-*/
+
 /*!
  * Bootswatch v5.2.3 (https://bootswatch.com)
  * Theme: solar
@@ -645,7 +645,7 @@ progress {
 }
 
     .blockquote-footer::before {
-        content: "— ";
+        content: "ï¿½ï¿½";
     }
 
 .img-fluid {

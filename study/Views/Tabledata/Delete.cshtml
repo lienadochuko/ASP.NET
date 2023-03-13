@@ -1,6 +1,6 @@
 ﻿@model Tabledata
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Edit";
 }
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -11,9 +11,9 @@
 <form method="post" class="container">
     <div class="border p-3 mt-4" style="width:80%; border-radius:10px;">
         <div class="row pb-2">
-            <h2 class="text-primary text-start">Create Table</h2>
+            <h2 class="text-primary text-start">Edit Table</h2>
         </div>
-       @* <div asp-validation-summary="All" class="text-danger"></div>*@
+        <div asp-validation-summary="All" class="text-danger"></div>
         <div class="mb-3 p-3 text-start">
             <div class="dan2 mb-2">
                 <label asp-for="Name" style="width:10%;"></label>
@@ -38,7 +38,7 @@
             </div>*@
             <div class="dan2 mt-4 justify-content-between">
                 <a asp-controller="Tabledata" asp-action="Index" class="btn btn-secondary" style="width:30%;">Back to Tabledata</a>
-                <button type="submit" class="btn btn-primary" style="width:30%;">Create</button>
+                <button type="submit" class="btn btn-primary" style="width:30%;">Delete</button>
 
             </div>
            

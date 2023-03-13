@@ -12,7 +12,7 @@ namespace study.Models
 		public string Department {get; set;}
 
 		[DisplayName("order")]
-		[Range(0, int.MaxValue)]
+		[Range(0, 100, ErrorMessage = "Order must not be more than 100 or less than 1")]
 		public int DisplayOrder { get; set; }
 		public DateTime CreatedDateTime { get; set; } = DateTime.Now;
 
