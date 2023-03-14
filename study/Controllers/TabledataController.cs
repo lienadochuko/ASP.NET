@@ -17,6 +17,7 @@ namespace study.Controllers
         public IActionResult Index()
         {
             IEnumerable<Tabledata> objectTabledataList = _db.Tabledatas;
+           
             return View(objectTabledataList);
         }
 
@@ -44,7 +45,7 @@ namespace study.Controllers
             {
                 _db.Tabledatas.Add(obj);
                 _db.SaveChanges();
-                TempData["successCreate"] = "TableData created successfully";
+                TempData["success"] = "TableData created successfully";
                 return RedirectToAction("Index");
             }
 
@@ -91,7 +92,7 @@ namespace study.Controllers
                 TempData["success"] = "TableData edited successfully";
                 return RedirectToAction("Index");
             }
-
+            TempData["success"] = null;
             return View(obj);
         }
 
@@ -124,7 +125,7 @@ namespace study.Controllers
 
             _db.Tabledatas.Remove(obj);
             _db.SaveChanges();
-            TempData["successDel"] = "TableData deleted successfully";
+            TempData["success"] = ("TableData deleted successfully");
                 return RedirectToAction("Index");
 
         }

@@ -2,39 +2,39 @@
 @{
     ViewData["Title"] = "Index";
 }
-<partial name="_Notification" />
+
 <div class="container p-3">
     <div class="row pt-4 mb-4" style="width:100%;">
         <div class="col-6">
-            <h2 class="text-primary text-start">Tabledata List</h2>
+            <h4 class="text-start" style="color:#87C4FF">Tabledata List</h4>
         </div>
         <div class="col-6 text-end">
-            <a asp-controller="Tabledata" asp-action="Create" class="btn btn-primary">
+            <a asp-controller="Tabledata" asp-action="Create" class="btn" style="background-color:#87C4FF; color:white;">
                 <i class="bi bi-plus-circle mx-2"></i>Create New Tabledata
             </a>
         </div>
     </div>
 
 
-    <table class="table table-bordered table-light table-striped">
+    <table class="table table-bordered table-light table-striped" style="font-size:12px;">
         <thead>
             <tr>
-                <th style="border:1px solid black;">
+                <th style="border:1px solid black; color:white;">
                     Name
                 </th>
-                <th style="border:1px solid black;">
+                <th style="border:1px solid black; color:white;">
                     Department
                 </th>
-                <th style="border:1px solid black;">
+                <th style="border:1px solid black; color:white;">
                     order
                 </th>
-                <th style="border:1px solid black;">
+                <th style="border:1px solid black; color:white;">
                     Date Created
                 </th>
-                <th style="border:1px solid black;">
+                <th style="border:1px solid black; color:white;">
 
                 </th>
-                <th style="border:1px solid black;">
+                <th style="border:1px solid black; color:white;">
 
                 </th>
             </tr>
@@ -56,8 +56,8 @@
                         @obj.CreatedDateTime
                     </td>
                     <td style="width:fit-content; border:1px solid black;">
-                        <div role="group" style="border:1px solid grey; border-radius:10px; background-color:grey;">
-                            <a asp-controller="Tabledata" asp-action="Edit" asp-route-id="@obj.Id" style="color:white;">
+                        <div role="group" >
+                            <a asp-controller="Tabledata" asp-action="Edit" asp-route-id="@obj.Id" style="color:black;">
                                 <i class="bi bi-pencil-square"></i><b>Edit</b>
                             </a>
                         </div>
