@@ -15,15 +15,15 @@ namespace study.Controllers
         }
 
         public IActionResult Index()
-        { 
+        {
             IEnumerable<Tabledata> objectTabledataList = _db.Tabledatas;
             return View(objectTabledataList);
         }
 
         //GET
         public IActionResult Create()
-        { 
-           
+        {
+
             return View();
         }
 
@@ -32,18 +32,19 @@ namespace study.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(Tabledata obj)
         {
-            if(obj.Name == obj.Department || obj.Name == obj.DisplayOrder.ToString() || obj.DisplayOrder.ToString() == obj.Department ) 
+            if (obj.Name == obj.Department || obj.Name == obj.DisplayOrder.ToString() || obj.DisplayOrder.ToString() == obj.Department)
             {
                 ModelState.AddModelError("CustomError", "pls make sure the name, department and order do not match");
             }
-            if(obj.Name == obj.Department && obj.Name == obj.DisplayOrder.ToString() && obj.DisplayOrder.ToString() == obj.Department ) 
+            if (obj.Name == obj.Department && obj.Name == obj.DisplayOrder.ToString() && obj.DisplayOrder.ToString() == obj.Department)
             {
                 ModelState.AddModelError("CustomError", "pls make sure the name, department and order do not match");
             }
-           if (ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 _db.Tabledatas.Add(obj);
                 _db.SaveChanges();
+                TempData["successCreate"] = "TableData created successfully";
                 return RedirectToAction("Index");
             }
 
@@ -87,6 +88,7 @@ namespace study.Controllers
             {
                 _db.Tabledatas.Update(obj);
                 _db.SaveChanges();
+                TempData["success"] = "TableData edited successfully";
                 return RedirectToAction("Index");
             }
 
@@ -119,11 +121,12 @@ namespace study.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Delete(Tabledata obj)
         {
-          
-                _db.Tabledatas.Remove(obj);
-                _db.SaveChanges();
+
+            _db.Tabledatas.Remove(obj);
+            _db.SaveChanges();
+            TempData["successDel"] = "TableData deleted successfully";
                 return RedirectToAction("Index");
-         
+
         }
     }
 }
