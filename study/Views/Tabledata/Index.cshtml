@@ -3,6 +3,12 @@
     ViewData["Title"] = "Index";
 }
 
+<style>
+    #dtBasicExample tbody tr:nth-child(n+11) {
+        display: none;
+    }
+</style>
+<>
 <div class="container p-3">
     <div class="row pt-4 mb-4" style="width:100%;">
         <div class="col-6">
@@ -16,7 +22,7 @@
     </div>
 
 
-    <table class="table table-bordered table-light table-striped" style="font-size:12px;">
+    <table id="dtBasicExample" class="table table-bordered table-light table-striped" style="font-size:12px;">
         <thead>
             <tr>
                 <th style="border:1px solid black; color:white;">
@@ -74,3 +80,6 @@
         </tbody>
     </table>
 </div>
+<div id="paging"></div>
+</>
+
